@@ -21,7 +21,7 @@ const fetchTokenFailure = (error) => {
 export const fetchToken = (userData) => {
   return (dispatch) => {
     dispatch(fetchTokenRequest());
-    fetch("http://localhost:8000/user/login/", {
+    fetch("http://localhost:8000/user/register/", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -31,10 +31,10 @@ export const fetchToken = (userData) => {
     })
       .then((res) => res.json())
       .then((res) => {
-        if (res.token) {
+        if (res.id) {
           dispatch(fetchTokenSuccess(res));
         }
-        if (res.status === "failed") {
+        if(res.status === "failed"){
           dispatch(fetchTokenFailure(res));
         }
       })

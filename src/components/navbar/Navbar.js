@@ -8,7 +8,7 @@ const Navbar = () => {
         home
       </Link>
       <Link className="mx-1" to="/login">
-        login page developing
+        login page
       </Link>
       <Link className="mx-1" to="/signup">
         signup
